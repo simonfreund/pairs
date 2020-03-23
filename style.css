@@ -232,6 +232,30 @@ a:hover {
   left: 50vw;
   cursor: e-resize; }
 
+#animate-wrapper {
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; }
+
+#animate-canvas {
+  left: 0px;
+  top: -100px;
+  height: calc(100vh + 100px);
+  overflow: hidden;
+  position: relative; }
+
+#animate-object {
+  margin: 0 auto;
+  width: 20px;
+  overflow: visible;
+  position: relative; }
+
 @media only screen and (max-width: 768px) {
   body {
     -webkit-text-size-adjust: none;
