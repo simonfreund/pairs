@@ -124,8 +124,8 @@ img {
 
 .card {
   display: flex;
-  width: calc((100vw / 8) - 14px);
-  height: calc((100vw / 8) - 14px);
+  width: calc((100vw / 8) - 16px);
+  height: calc((100vw / 8) - 16px);
   position: relative;
   transform: scale(1);
   transform-style: preserve-3d;
@@ -133,12 +133,12 @@ img {
   margin: 5px; }
 
 .game-36 .card {
-  width: calc((100vw / 6) - 15px);
-  height: calc((100vw / 6) - 15px); }
+  width: calc((100vw / 6) - 18px);
+  height: calc((100vw / 6) - 18px); }
 
 .game-16 .card {
-  width: calc((100vw / 4) - 18px);
-  height: calc((100vw / 4) - 18px); }
+  width: calc((100vw / 4) - 22px);
+  height: calc((100vw / 4) - 22px); }
 
 .card:active {
   transform: scale(0.9);
