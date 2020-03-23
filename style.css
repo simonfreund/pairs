@@ -1,0 +1,260 @@
+/*
+
+/^^^^^^^        /^^^^           /^       /^^^^^^^    /^^   /^^  
+/^^    /^^    /^^    /^^       /^ ^^     /^^    /^^  /^^  /^^   
+/^^    /^^  /^^        /^^    /^  /^^    /^^    /^^  /^^ /^^    
+/^ /^^      /^^        /^^   /^^   /^^   /^ /^^      /^ /^      
+/^^  /^^    /^^        /^^  /^^^^^^ /^^  /^^  /^^    /^^  /^^   
+/^^    /^^    /^^     /^^  /^^       /^^ /^^    /^^  /^^   /^^  
+/^^      /^^    /^^^^     /^^         /^^/^^      /^^/^^     /^^
+
+A project by Simon Freund with code by Marcello Curto
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: "tt0596m_";
+  src: url("./fonts/tt0596m_.ttf") format("truetype"); }
+
+html,
+body {
+  font-family: "tt0596m_", sans-serif;
+  letter-spacing: 0px;
+  font-size: 16px;
+  line-height: 20px;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+a {
+  color: blue;
+  text-decoration: none; }
+
+img {
+  height: 100%;
+  width: 100%; }
+
+.padding-normal {
+  padding: 20px; }
+
+.margin-left-normal {
+  margin-left: 20px; }
+
+.margin-left-auto {
+  margin-left: auto; }
+
+.margin-right-normal {
+  margin-right: 20px; }
+
+.flex {
+  display: flex; }
+
+.flex-1 {
+  flex: 1; }
+
+.flex-wrap {
+  flex-wrap: wrap; }
+
+.align-items-center {
+  align-items: center; }
+
+.justify-content-center {
+  justify-content: center; }
+
+.justify-content-space-between {
+  justify-content: space-between; }
+
+.fixed {
+  position: fixed; }
+
+.left {
+  left: 0; }
+
+.right {
+  right: 0; }
+
+.bottom {
+  bottom: 0; }
+
+.uppercase {
+  text-transform: uppercase; }
+
+.z-index-high {
+  z-index: 999; }
+
+.vh-100 {
+  height: 100vh; }
+
+.width-80 {
+  width: 80px; }
+
+.width-70 {
+  width: 70px; }
+
+.width-40 {
+  width: 40px; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.background-white {
+  background-color: white; }
+
+.background-grey {
+  background-color: #f6f6f6; }
+
+.hide {
+  display: none; }
+
+#boardgame {
+  perspective: 4000px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 62px; }
+
+#description {
+  padding-bottom: 12px; }
+
+.card {
+  display: flex;
+  width: calc((100vw / 8) - 13px);
+  height: calc((100vw / 8) - 13px);
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  margin: 5px; }
+
+.game-36 .card {
+  width: calc((100vw / 6) - 14px);
+  height: calc((100vw / 6) - 14px); }
+
+.game-16 .card {
+  width: calc((100vw / 4) - 16px);
+  height: calc((100vw / 4) - 16px); }
+
+.card:active {
+  transform: scale(0.9);
+  transition: transform 0.2s; }
+
+.card.flip {
+  transform: rotateY(180deg); }
+
+.card.done {
+  visibility: hidden; }
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2); }
+
+.card-front {
+  background-color: white; }
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: white; }
+
+a:hover {
+  color: white; }
+
+::-moz-selection {
+  color: white;
+  background: white; }
+
+::selection {
+  color: white;
+  background: white; }
+
+#animate {
+  z-index: 2000;
+  position: relative; }
+
+#scoreboard-player-1,
+#scoreboard-player-2 {
+  max-width: 200px;
+  height: 20px;
+  overflow: hidden;
+  white-space: nowrap; }
+
+.active-player {
+  color: blue; }
+
+.gallery-wrapper {
+  background-color: #f6f6f6;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 60px; }
+
+.image-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.gallery-image {
+  height: auto;
+  width: auto;
+  max-width: 85vw;
+  max-height: 85vh; }
+
+.gallery-navigation-left {
+  position: fixed;
+  top: 0;
+  z-index: 998;
+  bottom: 0;
+  left: 0;
+  right: 50vw;
+  cursor: w-resize; }
+
+.gallery-navigation-right {
+  position: fixed;
+  top: 0;
+  z-index: 998;
+  bottom: 0;
+  right: 0;
+  left: 50vw;
+  cursor: e-resize; }
+
+@media only screen and (max-width: 768px) {
+  body {
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none; }
+  #boardgame {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 65px; }
+  .card {
+    width: calc((100vw / 8) - 9px);
+    height: calc((100vw / 8) - 9px);
+    margin: 2px; }
+  .game-36 .card {
+    width: calc((100vw / 6) - 11px);
+    height: calc((100vw / 6) - 11px); }
+  .game-16 .card {
+    width: calc((100vw / 4) - 14px);
+    height: calc((100vw / 4) - 14px); }
+  #scoreboard-player-1,
+  #scoreboard-player-2 {
+    width: 80px; }
+  #scoreboard-player-1-score,
+  #scoreboard-player-2-score {
+    width: 30px; } }

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--
+
+/^^^^^^^        /^^^^           /^       /^^^^^^^    /^^   /^^  
+/^^    /^^    /^^    /^^       /^ ^^     /^^    /^^  /^^  /^^   
+/^^    /^^  /^^        /^^    /^  /^^    /^^    /^^  /^^ /^^    
+/^ /^^      /^^        /^^   /^^   /^^   /^ /^^      /^ /^      
+/^^  /^^    /^^        /^^  /^^^^^^ /^^  /^^  /^^    /^^  /^^   
+/^^    /^^    /^^     /^^  /^^       /^^ /^^    /^^  /^^   /^^  
+/^^      /^^    /^^^^     /^^         /^^/^^      /^^/^^     /^^
+
+A project by Simon Freund with code by Marcello Curto
+
+-->
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>mit oder ohne</title>
+        <meta name="description"
+                content="mit oder ohne is a photo series by Simon Freund taken with an old Polaroid camera on black and white film. The following memory shows 32 motives taken by Freund between 2019 and 2020 in a pair of two. One of them taken with flash and the other one without" />
+        <meta property="og:description"
+                content="mit oder ohne is a photo series by Simon Freund taken with an old Polaroid camera on black and white film. The following memory shows 32 motives taken by Freund between 2019 and 2020 in a pair of two. One of them taken with flash and the other one without" />
+        <meta property="og:image"
+                content="https://mitoderohne.simonfreund.com/images/opengraph/simon_freund_mit_oder_ohne_online_memory_game_01_macbook_2000_px.gif" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="mit oder ohne" />
+        <meta property="og:url" content="https://mitoderohne.simonfreund.com/" />
+        <meta property="og:site_name" content="mit oder ohne" />
+        <link href="https://simonfreund.com/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+        <link href="https://simonfreund.com/images/webclip.png" rel="apple-touch-icon">
+</head>
+
+<body>
+        <article id="description" class="padding-normal">
+                <p>
+                        <a href="/">mit oder ohne</a> is a photo series by <a href="https://simonfreund.com/">Simon
+                                Freund</a> taken with an old Polaroid camera on black and white film. The following
+                        memory shows
+                        8 motives
+                        taken by Freund between 2019 and 2020 in a pair of two. One of them taken with flash and the
+                        other one
+                        without –
+                        <a href="/info">learn more</a>
+                </p>
+                <p>You can play this game with <a href="/64">64</a>, <a href="/">36</a> or 16 cards.</p>
+
+        </article>
+
+        <div class="flex fixed z-index-high left right bottom background-white justify-content-space-between padding-normal"
+                id="scoreboard">
+                <div id="scoreboard-timer" class="width-70">00:00</div>
+                <div id="scoreboard-score" class="width-70 text-center">0</div>
+                <div id="scoreboard-to-duell" class="uppercase width-70 text-right"><a id="duel-link"
+                                href="/duel-16">Duel</a></div>
+        </div>
+        <div class="game-16 flex flex-wrap align-items-center" id="boardgame">
+                <div class="card" data-img="img-01"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_01_A.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_01_A_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_01_A_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_01_A_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-01"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_01_B.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_01_B_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_01_B_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_01_B_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-02"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_02_A.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_02_A_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_02_A_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_02_A_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-02"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_02_B.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_02_B_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_02_B_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_02_B_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-03"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_03_A.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_03_A_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_03_A_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_03_A_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-03"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_03_B.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_03_B_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_03_B_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_03_B_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-04"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_04_A.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_04_A_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_04_A_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_04_A_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-04"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_04_B.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_04_B_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_04_B_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_04_B_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-05"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_05_A.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_05_A_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_05_A_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_05_A_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-05"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_05_B.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_05_B_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_05_B_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_05_B_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-06"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_06_A.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_06_A_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_06_A_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_06_A_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-06"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_06_B.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_06_B_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_06_B_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_06_B_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-07"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_07_A.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_07_A_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_07_A_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_07_A_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-07"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_07_B.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_07_B_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_07_B_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_07_B_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-08"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_08_A.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_08_A_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_08_A_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_08_A_640.jpg 640w">
+                </div>
+                <div class="card" data-img="img-08"><img class="card-front"
+                        src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_ravensburger_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_ravensburger_640.jpg 640w"><img
+                        class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_08_B.jpg"
+                        srcset="./images/cards/simon_freund_mit_oder_ohne_08_B_320.jpg 320w,./images/cards/simon_freund_mit_oder_ohne_08_B_480.jpg 480w,./images/cards/simon_freund_mit_oder_ohne_08_B_640.jpg 640w">
+                </div>
+        </div>
+        <script src="script.js"></script>
+
+</body>
+
+</html>
