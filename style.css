@@ -115,30 +115,30 @@ img {
 
 #boardgame {
   perspective: 4000px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 62px; }
+  padding-bottom: 62px;
+  display: grid;
+  grid-gap: 10px;
+  padding-left: 20px;
+  padding-right: 20px; }
 
 #description {
   padding-bottom: 12px; }
 
 .card {
-  display: flex;
-  width: calc((100vw / 8) - 16px);
-  height: calc((100vw / 8) - 16px);
-  position: relative;
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform 0.5s;
-  margin: 5px; }
+  height: 0;
+  padding-bottom: 100%; }
 
-.game-36 .card {
-  width: calc((100vw / 6) - 18px);
-  height: calc((100vw / 6) - 18px); }
+.game-64 {
+  grid-template-columns: repeat(8, 1fr); }
 
-.game-16 .card {
-  width: calc((100vw / 4) - 22px);
-  height: calc((100vw / 4) - 22px); }
+.game-36 {
+  grid-template-columns: repeat(6, 1fr); }
+
+.game-16 {
+  grid-template-columns: repeat(4, 1fr); }
 
 .card:active {
   transform: scale(0.9);
