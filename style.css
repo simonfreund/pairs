@@ -276,19 +276,8 @@ img::selection,
     -ms-text-size-adjust: none;
     text-size-adjust: none; }
   #boardgame {
-    padding-left: 17px;
-    padding-right: 17px;
+    grid-gap: 4px;
     padding-bottom: 65px; }
-  .card {
-    width: calc((100vw / 8) - 10.3px);
-    height: calc((100vw / 8) - 10.3px);
-    margin: 2px; }
-  .game-36 .card {
-    width: calc((100vw / 6) - 11.7px);
-    height: calc((100vw / 6) - 11.7px); }
-  .game-16 .card {
-    width: calc((100vw / 4) - 14.5px);
-    height: calc((100vw / 4) - 14.5px); }
   #scoreboard-player-1,
   #scoreboard-player-2 {
     width: 80px; }
