@@ -93,7 +93,6 @@ function disableCards() {
         if (successEvents === numberOfUniqueCards) {
             clearInterval(timerID)
             succesScorebooard()
-            emojiRain()
             removeBoard()
             addGallery()
             return
@@ -102,7 +101,6 @@ function disableCards() {
     if (duelMode) {
         if ((player1Score + player2Score) === numberOfElements / 2) {
             succesScorebooard()
-            emojiRain()
             removeBoard()
             addGallery()
             return
@@ -222,18 +220,27 @@ function waitForImagesToLoadAutomatic() {
 }
 
 function nextImage() {
+    console.log('next start', galleryImageOrder);
     galleryImageOrder++
     if (galleryRunning) { galleryRunning = false; clearInterval(galleryIntervalID) }
     if (galleryImageOrder > 63) { galleryImageOrder = 0 }
     document.getElementById('img-gallery').src = galleryImageURLs[galleryImageOrder]
+    console.log('before plus', galleryImageOrder);
+
+    console.log('after plus', galleryImageOrder);
 }
 
 function prevImage() {
+    console.log('prev start', galleryImageOrder);
     galleryImageOrder--
     if (galleryRunning) { galleryRunning = false; clearInterval(galleryIntervalID) }
     if (galleryImageOrder > 63) { galleryImageOrder = 0 }
     if (galleryImageOrder < 0) { galleryImageOrder = 63 }
     document.getElementById('img-gallery').src = galleryImageURLs[galleryImageOrder]
+    console.log('before minus', galleryImageOrder);
+
+    console.log('after minus', galleryImageOrder);
+
 }
 
 function nextImageAutomatic() {
@@ -295,75 +302,135 @@ let startGalleryInterval = () => setInterval(nextImageAutomatic, 1000)
 // Listen for clicks on card and then execute flipCard function
 cards.forEach(cardClicked => cardClicked.addEventListener('click', flipCard))
 
-function emojiRain() {
-    // Original code by Robert Heiser & Rachel Smith. Modified by Marcello Curto.
-    const animateWrapper = document.createElement('div')
-    animateWrapper.id = 'animate-wrapper'
-    document.body.appendChild(animateWrapper)
 
-    const animateCanvas = document.createElement('div')
-    animateCanvas.id = 'animate-canvas'
-    animateWrapper.appendChild(animateCanvas)
 
-    const animateObject = document.createElement('div')
-    animateObject.id = 'animate-object'
-    animateCanvas.appendChild(animateObject)
 
-    const emoji = ['👻'];
-    let circles = [];
 
-    for (let i = 0; i < 15; i++) {
-        addCircle(i * 150, [10 + 0, 300], emoji[Math.floor(Math.random() * emoji.length)])
-        addCircle(i * 150, [10 + 0, -300], emoji[Math.floor(Math.random() * emoji.length)])
-        addCircle(i * 150, [10 - 200, -300], emoji[Math.floor(Math.random() * emoji.length)])
-        addCircle(i * 150, [10 + 200, 300], emoji[Math.floor(Math.random() * emoji.length)])
-        addCircle(i * 150, [10 - 400, -300], emoji[Math.floor(Math.random() * emoji.length)])
-        addCircle(i * 150, [10 + 400, 300], emoji[Math.floor(Math.random() * emoji.length)])
-        addCircle(i * 150, [10 - 600, -300], emoji[Math.floor(Math.random() * emoji.length)])
-        addCircle(i * 150, [10 + 600, 300], emoji[Math.floor(Math.random() * emoji.length)])
-    }
 
-    function addCircle(delay, range, color) {
-        setTimeout(function () {
-            let c = new Circle(range[0] + Math.random() * range[1], 80 + Math.random() * 4, color, {
-                x: -0.15 + Math.random() * 0.3,
-                y: 1 + Math.random() * 1
-            }, range)
-            circles.push(c)
-        }, delay)
-    }
 
-    function Circle(x, y, c, v, range) {
-        let _this = this
-        this.x = x
-        this.y = y
-        this.color = c
-        this.v = v
-        this.range = range
-        this.element = document.createElement('span')
-        this.element.style.opacity = 0
-        this.element.style.position = 'absolute'
-        this.element.style.fontSize = '26px'
-        this.element.style.color = 'hsl(' + (Math.random() * 360 | 0) + ',80%,50%)'
-        this.element.innerHTML = c
-        animateObject.appendChild(this.element)
 
-        this.update = function () {
-            _this.y += _this.v.y
-            _this.x += _this.v.x
-            this.element.style.opacity = 1
-            this.element.style.transform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)'
-            this.element.style.webkitTransform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)'
-            this.element.style.mozTransform = 'translate3d(' + _this.x + 'px, ' + _this.y + 'px, 0px)'
+// Create HTML elements that make up the cards
+function elementsHTML() {
+    let html = ''
+    let imageNumber = 0
+    const sizes = [
+        { width: 320, quality: 64, suffix: "_320" },
+        { width: 480, quality: 64, suffix: "_480" },
+        { width: 640, quality: 64, suffix: "_640" },
+    ]
+
+    for (let i = 1; i < 33; i++) {
+        if (i > 9) {
+            imageNumber = i
+        } else {
+            imageNumber = '0' + i.toString()
         }
-    }
+        html += '<div class="card" data-img="img-' + imageNumber + '">'
 
-    function animate() {
-        for (let i in circles) {
-            circles[i].update()
+        html += '<img class="card-front" src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt" '
+        html += 'srcset="'
+        sizes.forEach(size => {
+            html += './images/cards/simon_freund_mit_oder_ohne_ravensburger_' + size.width + '.jpg ' + size.width + 'w,'
+        })
+        html += '">'
+
+        html += '<img class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_' + imageNumber + '_A.jpg" '
+        html += 'srcset="'
+        sizes.forEach(size => {
+            html += './images/cards/simon_freund_mit_oder_ohne_' + imageNumber + '_A_' + size.width + '.jpg ' + size.width + 'w,'
+        })
+        html += '"></div>'
+
+        html += '<div class="card" data-img="img-' + imageNumber + '">'
+
+        html += '<img class="card-front" src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt" '
+        html += 'srcset="'
+        sizes.forEach(size => {
+            html += './images/cards/simon_freund_mit_oder_ohne_ravensburger_' + size.width + '.jpg ' + size.width + 'w,'
+        })
+        html += '">'
+
+        html += '<img class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_' + imageNumber + '_B.jpg" '
+        html += 'srcset="'
+        sizes.forEach(size => {
+            html += './images/cards/simon_freund_mit_oder_ohne_' + imageNumber + '_B_' + size.width + '.jpg ' + size.width + 'w,'
+        })
+        html += '"></div>'
+
+
+    }
+    console.log(html);
+}
+
+// elementsHTML()
+
+// Open and close the menu
+
+const overlayMenu = document.getElementById('overlay-menu')
+function openMenu() { overlayMenu.style.display = 'flex' }
+function closeMenu() { overlayMenu.style.display = 'none' }
+
+// Select the game to be played
+
+let cardsSelected = '36'
+let modeSelected = 'single'
+
+const playGame = document.getElementById('scoreboard-sub-menu-play')
+if (playGame) {
+    // Select number of cards
+    const select64 = document.getElementById('select-64')
+    const select36 = document.getElementById('select-36')
+    const select16 = document.getElementById('select-16')
+
+    const arraySelectCards = [select64, select36, select16]
+
+    arraySelectCards.forEach(selection => {
+        if (selection.dataset.cards === cardsSelected) {
+            selection.style.color = 'blue'
         }
-        requestAnimationFrame(animate)
-    }
+        selection.addEventListener('click', () => {
+            cardsSelected = selection.dataset.cards
+            selection.style.color = 'blue'
+            arraySelectCards.forEach(element => {
+                if (selection != element) {
+                    element.style.color = 'black'
+                }
+            })
+        })
+    })
 
-    animate()
+    // Select game mode
+    const selectSingleMode = document.getElementById('select-single')
+    const selectDuelMode = document.getElementById('select-duel')
+
+    const arraySelectMode = [selectSingleMode, selectDuelMode]
+
+    arraySelectMode.forEach(selection => {
+        if (selection.dataset.mode === modeSelected) {
+            selection.style.color = 'blue'
+        }
+        selection.addEventListener('click', () => {
+            modeSelected = selection.dataset.mode
+            selection.style.color = 'blue'
+            arraySelectMode.forEach(element => {
+                if (selection != element) {
+                    element.style.color = 'black'
+                }
+            })
+        })
+    })
+
+    // Start game
+    const playButton = document.getElementById('scoreboard-sub-menu-play')
+    playButton.addEventListener('click', () => {
+        if (modeSelected === 'single') {
+            if (cardsSelected != '36') {
+                playButton.href = `/${cardsSelected}`
+            }
+        }
+        if (modeSelected === 'duel') {
+            playButton.href = `/${modeSelected}-${cardsSelected}`
+        }
+    })
+
 }
