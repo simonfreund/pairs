@@ -92,7 +92,6 @@ function disableCards() {
         // If all cards have been turned, end the game
         if (successEvents === numberOfUniqueCards) {
             clearInterval(timerID)
-            succesScorebooard()
             removeBoard()
             addGallery()
             return
@@ -100,7 +99,6 @@ function disableCards() {
     }
     if (duelMode) {
         if ((player1Score + player2Score) === numberOfElements / 2) {
-            succesScorebooard()
             removeBoard()
             addGallery()
             return
@@ -174,17 +172,6 @@ let timerLogic = () => {
     minutes < 10 ? minutesAsString = '0' + minutes.toString() : minutesAsString = minutes.toString()
     timerCounter.textContent = minutesAsString + ":" + secondsAsString
 }
-
-// Change scoreboard elements after successful game
-const succesScorebooard = () => {
-    const scoreboard = document.getElementById('scoreboard')
-    const newScoreItem = document.createElement('a')
-    newScoreItem.href = '/'
-    newScoreItem.classList.add('margin-right-normal')
-    newScoreItem.appendChild(document.createTextNode('/'))
-    scoreboard.insertBefore(newScoreItem, scoreboard.childNodes[0])
-}
-
 
 let galleryImageOrder = -1
 let galleryImageType = 'A'
