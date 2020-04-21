@@ -289,76 +289,12 @@ let startGalleryInterval = () => setInterval(nextImageAutomatic, 1000)
 // Listen for clicks on card and then execute flipCard function
 cards.forEach(cardClicked => cardClicked.addEventListener('click', flipCard))
 
-
-
-
-
-
-
-
-// Create HTML elements that make up the cards
-function elementsHTML() {
-    let html = ''
-    let imageNumber = 0
-    const sizes = [
-        { width: 320, quality: 64, suffix: "_320" },
-        { width: 480, quality: 64, suffix: "_480" },
-        { width: 640, quality: 64, suffix: "_640" },
-    ]
-
-    for (let i = 1; i < 33; i++) {
-        if (i > 9) {
-            imageNumber = i
-        } else {
-            imageNumber = '0' + i.toString()
-        }
-        html += '<div class="card" data-img="img-' + imageNumber + '">'
-
-        html += '<img class="card-front" src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt" '
-        html += 'srcset="'
-        sizes.forEach(size => {
-            html += './images/cards/simon_freund_mit_oder_ohne_ravensburger_' + size.width + '.jpg ' + size.width + 'w,'
-        })
-        html += '">'
-
-        html += '<img class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_' + imageNumber + '_A.jpg" '
-        html += 'srcset="'
-        sizes.forEach(size => {
-            html += './images/cards/simon_freund_mit_oder_ohne_' + imageNumber + '_A_' + size.width + '.jpg ' + size.width + 'w,'
-        })
-        html += '"></div>'
-
-        html += '<div class="card" data-img="img-' + imageNumber + '">'
-
-        html += '<img class="card-front" src="./images/cards/simon_freund_mit_oder_ohne_ravensburger.jpg" alt="mit oder ohne - verdeckt" '
-        html += 'srcset="'
-        sizes.forEach(size => {
-            html += './images/cards/simon_freund_mit_oder_ohne_ravensburger_' + size.width + '.jpg ' + size.width + 'w,'
-        })
-        html += '">'
-
-        html += '<img class="card-back" alt="mit oder ohne - aufgedeckt" src="./images/cards/simon_freund_mit_oder_ohne_' + imageNumber + '_B.jpg" '
-        html += 'srcset="'
-        sizes.forEach(size => {
-            html += './images/cards/simon_freund_mit_oder_ohne_' + imageNumber + '_B_' + size.width + '.jpg ' + size.width + 'w,'
-        })
-        html += '"></div>'
-
-
-    }
-    console.log(html);
-}
-
-// elementsHTML()
-
 // Open and close the menu
-
 const overlayMenu = document.getElementById('overlay-menu')
 function openMenu() { overlayMenu.style.display = 'flex' }
 function closeMenu() { overlayMenu.style.display = 'none' }
 
 // Select the game to be played
-
 let cardsSelected = '36'
 let modeSelected = 'single'
 
@@ -373,14 +309,14 @@ if (playGame) {
 
     arraySelectCards.forEach(selection => {
         if (selection.dataset.cards === cardsSelected) {
-            selection.style.color = 'blue'
+            selection.style.color = 'black'
         }
         selection.addEventListener('click', () => {
             cardsSelected = selection.dataset.cards
-            selection.style.color = 'blue'
+            selection.style.color = 'black'
             arraySelectCards.forEach(element => {
                 if (selection != element) {
-                    element.style.color = 'black'
+                    element.style.color = 'blue'
                 }
             })
         })
@@ -394,14 +330,14 @@ if (playGame) {
 
     arraySelectMode.forEach(selection => {
         if (selection.dataset.mode === modeSelected) {
-            selection.style.color = 'blue'
+            selection.style.color = 'black'
         }
         selection.addEventListener('click', () => {
             modeSelected = selection.dataset.mode
-            selection.style.color = 'blue'
+            selection.style.color = 'black'
             arraySelectMode.forEach(element => {
                 if (selection != element) {
-                    element.style.color = 'black'
+                    element.style.color = 'blue'
                 }
             })
         })
