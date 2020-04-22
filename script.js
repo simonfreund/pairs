@@ -15,10 +15,12 @@ let deckSelected = 'p'
 let deckName = 'portfolio'
 
 // Check for different configuration
-const newString = location.pathname.replace('/', '').split('?')
-cardsSelected = newString[0] ? newString[0] : cardsSelected
-modeSelected = newString[1] ? newString[1] : modeSelected
-deckSelected = newString[2] ? newString[2] : deckSelected
+const newString = location.href.split('-')
+cardsSelected = newString[1] ? newString[1] : cardsSelected
+modeSelected = newString[2] ? newString[2] : modeSelected
+deckSelected = newString[3] ? newString[3] : deckSelected
+console.log(newString);
+
 
 const imageSizes = [480, 640]
 const suffixImage = '.jpg'
@@ -428,7 +430,7 @@ if (playGame) {
     // Start game
     const playButton = document.getElementById('scoreboard-sub-menu-play')
     playButton.addEventListener('click', () => {
-        playButton.href = `/?${cardsSelected}?${modeSelected}?${deckSelected}`
+        playButton.href = '/?-' + cardsSelected + '-' + modeSelected + '-' + deckSelected
     })
 }
 
