@@ -1,4 +1,4 @@
-# mit oder ohne
-[mit oder ohne](https://mitoderohne.simonfreund.com) is a series of photographs taken by [Simon Freund](https://simonfreund.com/) with an old Polaroid 600 camera between the end of 2019 and the beginning of 2020. The series is composed of 32 motives each taken with and without flash to form a pair of two. The result is a 64-part memory game printed on original Ravensburger memory cards and this online version of the same game.
+# Pairs
+Welcome. Take a look at [Simon Freund](https://simonfreund.com/)’s work by playing a round of [Pairs](https://pairs.simonfreund.com/). Select a deck, the amount of cards and start playing. Choose the duel mode to play with a friend.
 
-Coded by [Marcello Curto](https://marcellocurto.com).
+Code by [Marcello Curto](https://marcellocurto.com).

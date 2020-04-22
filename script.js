@@ -15,7 +15,7 @@ let deckSelected = 'p'
 let deckName = 'portfolio'
 
 // Check for different configuration
-const newString = location.pathname.replace('/', '').split('-')
+const newString = location.pathname.replace('/', '').split('?')
 cardsSelected = newString[0] ? newString[0] : cardsSelected
 modeSelected = newString[1] ? newString[1] : modeSelected
 deckSelected = newString[2] ? newString[2] : deckSelected
@@ -428,7 +428,7 @@ if (playGame) {
     // Start game
     const playButton = document.getElementById('scoreboard-sub-menu-play')
     playButton.addEventListener('click', () => {
-        playButton.href = `/${cardsSelected}-${modeSelected}-${deckSelected}`
+        playButton.href = `/?${cardsSelected}?${modeSelected}?${deckSelected}`
     })
 }
 
