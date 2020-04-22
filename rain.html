@@ -6,15 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rain</title>
     <link rel="stylesheet" href="style.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161614632-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-161614632-1');
-    </script>
-
     <style>
         body {
             margin: 0;
@@ -57,6 +48,35 @@
             height: 100vh;
             width: 100%;
             position: fixed;
+        }
+
+        #footer {
+            color: #808080;
+            text-decoration: none;
+            position: fixed;
+            width: 752px;
+            bottom: 20px;
+            align-content: center;
+            float: none;
+            margin-left: calc(50% - 376px);
+        }
+
+        a,
+        p {
+            text-decoration: none;
+            color: #808080;
+            letter-spacing: 6px;
+            transition: all 0.5s ease-in-out;
+            width: auto;
+            float: left;
+            margin: 0;
+            margin-right: 9px;
+        }
+
+        a:hover {
+            color: #fff;
+            letter-spacing: 2px;
+            transition: all 0.5s ease-in-out;
         }
     </style>
 </head>
@@ -107,7 +127,6 @@
             this.v = v;
             this.range = range;
             this.element = document.createElement('span');
-            /*this.element.style.display = 'block';*/
             this.element.style.opacity = 0;
             this.element.style.position = 'absolute';
             this.element.style.fontSize = '26px';
