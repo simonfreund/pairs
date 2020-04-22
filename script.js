@@ -19,8 +19,6 @@ const newString = location.href.split('-')
 cardsSelected = newString[1] ? newString[1] : cardsSelected
 modeSelected = newString[2] ? newString[2] : modeSelected
 deckSelected = newString[3] ? newString[3] : deckSelected
-console.log(newString);
-
 
 const imageSizes = [480, 640]
 const suffixImage = '.jpg'
