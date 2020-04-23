@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--
+
+/^^^^^^^        /^^^^           /^       /^^^^^^^    /^^   /^^  
+/^^    /^^    /^^    /^^       /^ ^^     /^^    /^^  /^^  /^^   
+/^^    /^^  /^^        /^^    /^  /^^    /^^    /^^  /^^ /^^    
+/^ /^^      /^^        /^^   /^^   /^^   /^ /^^      /^ /^      
+/^^  /^^    /^^        /^^  /^^^^^^ /^^  /^^  /^^    /^^  /^^   
+/^^    /^^    /^^     /^^  /^^       /^^ /^^    /^^  /^^   /^^  
+/^^      /^^    /^^^^     /^^         /^^/^^      /^^/^^     /^^
+
+A project by Simon Freund with code by Marcello Curto
+
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161614632-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161614632-1');
+    </script>
+    <title>Simon Freund – Pairs – Info</title>
+    <meta name="description"
+        content="Welcome. Take a look at Simon Freund’s work by playing a round of Pairs. Select a deck, the amount of cards and start playing. Choose the duel mode to play with a friend." />
+    <meta property="og:description"
+        content="Welcome. Take a look at Simon Freund’s work by playing a round of Pairs. Select a deck, the amount of cards and start playing. Choose the duel mode to play with a friend." />
+    <meta property="og:image" content="https://pairs.simonfreund.com/images/opengraph/simon_freund_pairs.gif" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="mit oder ohne" />
+    <meta property="og:url" content="https://pairs.simonfreund.com/404" />
+    <meta property="og:site_name" content="mit oder ohne" />
+    <link href="https://simonfreund.com/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="https://simonfreund.com/images/webclip.png" rel="apple-touch-icon">
+</head>
+
+<body>
+    <div id="overlay-menu"
+        class="column fixed left right bottom top background-white z-index-highest padding-normal overflow-x-scroll">
+        <article>
+            <p class="margin-bottom-double">Welcome. Take a look at <a href="https://simonfreund.com"
+                    target="_blank">Simon
+                    Freund</a>’s work by playing a round of Pairs. Select a deck, the amount of
+                cards and start playing. Choose the duel mode to play with a friend.</p>
+            <p class="margin-bottom-normal">Deck: <span id="select-p" class="cursor link"
+                    data-deck="p">portfolio</span>, <span id="select-m" class="cursor link" data-deck="m">mit oder
+                    ohne‍</span>, <span id="select-a" class="cursor link" data-deck="a">allipossess.com</span></p>
+            <p class="margin-bottom-normal">Size: <span id="select-64" class="cursor link" data-cards="8">64</span>,
+                <span id="select-36" class="cursor link" data-cards="6">36</span>, <span id="select-16"
+                    class="cursor link" data-cards="4">16</span></p>
+            <p class="margin-bottom-double">Mode: <span id="select-single" class="cursor link"
+                    data-mode="single">single</span>, <span id="select-duel" class="cursor link"
+                    data-mode="duel">duel</span></p>
+            <p class="margin-bottom-double"><a id="scoreboard-sub-menu-play" href="/">START PLAYING</a></p>
+            <p class="margin-bottom-double">Enjoy the game? Become a <a href="http://support.simonfreund.com/"
+                    target="blank">patron</a>
+                and support Simon Freund with <span id="checkout-button-plan_GMJljP9wSoLohD" role="link" class="link">1€
+                    per
+                    month</span></p>
+            <p class="margin-bottom-normal">code by <a href="https://marcellocurto.com" target="_blank">Marcello
+                    Curto</a></p>
+        </article>
+    </div>
+    <script>
+        const playGame = document.getElementById('scoreboard-sub-menu-play')
+
+        if (playGame) {
+            // Select number of cards
+            const select64 = document.getElementById('select-64')
+            const select36 = document.getElementById('select-36')
+            const select16 = document.getElementById('select-16')
+
+            let cardsSelected = ''
+            let modeSelected = ''
+            let deckSelected = ''
+
+            const arraySelectCards = [select64, select36, select16]
+
+            arraySelectCards.forEach(selection => {
+                if (selection.dataset.cards === cardsSelected) { selection.style.color = 'black' }
+                selection.addEventListener('click', () => {
+                    cardsSelected = selection.dataset.cards
+                    selection.style.color = 'black'
+                    arraySelectCards.forEach(element => {
+                        if (selection != element) { element.style.color = 'blue' }
+                    })
+                })
+            })
+
+            // Select game mode
+            const selectSingleMode = document.getElementById('select-single')
+            const selectDuelMode = document.getElementById('select-duel')
+
+            const arraySelectMode = [selectSingleMode, selectDuelMode]
+
+            arraySelectMode.forEach(selection => {
+                if (selection.dataset.mode === modeSelected) { selection.style.color = 'black' }
+                selection.addEventListener('click', () => {
+                    modeSelected = selection.dataset.mode
+                    selection.style.color = 'black'
+                    arraySelectMode.forEach(element => {
+                        if (selection != element) { element.style.color = 'blue' }
+                    })
+                })
+            })
+
+            // Select deck
+            const selectMit = document.getElementById('select-m')
+            const selectAll = document.getElementById('select-a')
+            const selectPort = document.getElementById('select-p')
+            const arrayDeck = [selectMit, selectAll, selectPort]
+
+            arrayDeck.forEach(selection => {
+                if (selection.dataset.deck === deckSelected) { selection.style.color = 'black' }
+                selection.addEventListener('click', () => {
+                    deckSelected = selection.dataset.deck
+                    selection.style.color = 'black'
+                    arrayDeck.forEach(element => {
+                        if (selection != element) { element.style.color = 'blue' }
+                    })
+                })
+            })
+
+            // Start game
+            const playButton = document.getElementById('scoreboard-sub-menu-play')
+            playButton.addEventListener('click', () => {
+                playButton.href = '/?-' + cardsSelected + '-' + modeSelected + '-' + deckSelected
+            })
+        }
+    </script>
+    <script src="https://js.stripe.com/v3"></script>
+    <script>
+        const stripe = Stripe('pk_live_jFOzi7qAbsEa5i00kGF6D7D4');
+        const checkoutButton = document.getElementById('checkout-button-plan_GMJljP9wSoLohD');
+        checkoutButton.addEventListener('click', function () {
+            stripe.redirectToCheckout({
+                items: [{ plan: 'plan_GMJljP9wSoLohD', quantity: 1 }],
+                successUrl: 'http://support.simonfreund.com/success',
+                cancelUrl: 'http://support.simonfreund.com/canceled',
+            })
+                .then(function (result) {
+                    if (result.error) {
+                        const displayError = document.getElementById('error-message');
+                        displayError.textContent = result.error.message;
+                    }
+                });
+        });
+    </script>
+</body>
+
+</html>
