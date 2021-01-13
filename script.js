@@ -123,7 +123,7 @@ boardgameElement.style.gridTemplateColumns = `repeat(${evenNumberOnly}, 1fr)`
 
 const randomNumbers = new Array(maxNumbersOfMotifs).fill().map((a, i) => a = i + 1).sort(() => Math.random() - 0.5)
 
-for (let indexImages = 1; indexImages <= numberOfMotifs; indexImages++) {
+for (let indexImages = 0; indexImages < numberOfMotifs; indexImages++) {
     // Create Card Element 1
     const cardElement1 = document.createElement('div')
     cardElement1.classList.add('card')
