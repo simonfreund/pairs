@@ -36,7 +36,7 @@ let maxNumbersOfMotifs = 37
 if (deckSelected === 'p') {
     pathBackCard = './images/cards/portfolio/simon_freund_pairs_portfolio_'
     maxNumbersOfRows = 8
-    maxNumbersOfMotifs = 37
+    maxNumbersOfMotifs = 40
     cardsASuffix = ''
     cardsBSuffix = ''
     deckName = 'portfolio'
