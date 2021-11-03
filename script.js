@@ -44,7 +44,7 @@ if (deckSelected === 'p') {
 if (deckSelected === 'a') {
     pathBackCard = './images/cards/allipossess/simon_freund_pairs_allipossess_'
     maxNumbersOfRows = 24
-    maxNumbersOfMotifs = 329
+    maxNumbersOfMotifs = 218
     cardsASuffix = ''
     cardsBSuffix = ''
     deckName = 'allipossess.com'
